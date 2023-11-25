@@ -67,5 +67,7 @@ if [[ "$(command -v make)" ]]; then
 fi
 
 echo "Installing repo"
-sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-sudo chmod a+rx /usr/local/bin/repo
+sudo mkdir ~/bin
+sudo curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+sudo chmod a+x ~/bin/repo
+sudo ln -sf ~/bin/repo /usr/bin/repo
